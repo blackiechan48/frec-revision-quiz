@@ -1,0 +1,106 @@
+/* ===== Mobile-first base styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #111;
+}
+
+/* ===== Layout ===== */
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* ===== Welcome page ===== */
+.welcome {
+  text-align: center;
+}
+
+.welcome img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.welcome button {
+  margin-top: 24px;
+}
+
+/* ===== Buttons ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===== Quiz ===== */
+.timer {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.option {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.option:hover {
+  background: #d1d5db;
+}
+
+/* ===== Results ===== */
+.result {
+  margin-bottom: 24px;
+}
+
+.correct {
+  background: #c7f9cc;
+}
+
+.wrong {
+  background: #fbcaca;
+}
+
+/* ===== Tablet & up ===== */
+@media (min-width: 768px) {
+  .app {
+    padding: 32px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
