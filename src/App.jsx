@@ -3,7 +3,7 @@ import { parseQuestions } from "./utils/parser";
 import { RAW_QUESTIONS } from "./questions";
 import groupPhoto from "./assets/group-photo.jpeg";
 
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 60;
 const BEST_SCORE_KEY = "frec3-best-score";
 
 export default function App() {

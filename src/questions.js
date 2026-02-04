@@ -35,10 +35,10 @@ B. It increases pain
 C. It risks dislodging clots
 D. It affects circulation checks
 
-7. A patient with suspected spinal injury must be log-rolled. When do you stop the roll? C
+7. A patient with suspected spinal injury MUST be log-rolled. When do you stop the roll? C
 A. When airway is accessible
 B. At 45° for assessment
-C. If they resist or pain worsens
+C. If they say you shouln't touch them
 D. Only at full 90°
 
 8. You’re ventilating a patient with a BVM. What is the BIGGEST risk if you squeeze too forcefully? B
@@ -89,7 +89,7 @@ B. Cool, remove clothing, cover
 C. Cover, cool, remove clothing
 D. Apply ointment, cool, cover
 
-16. A patient has an RR of 32 and HR of 130 after trauma. What should you consider FIRST? B
+16. A patient has an breathing rate of 32 and HR of 130 after trauma. What should you consider FIRST? B
 A. Anxiety
 B. Early shock
 C. Food poisoning
@@ -107,7 +107,7 @@ B. Slightly fast at 22
 C. Slow and irregular
 D. Deep but steady
 
-19. A patient’s blood glucose is low and they’re conscious but confused. What’s appropriate? A
+19. A patient’s blood glucose is low, they’re conscious but confused. What’s appropriate? A
 A. Give sugary food or drink
 B. Give insulin
 C. Put them in recovery position
