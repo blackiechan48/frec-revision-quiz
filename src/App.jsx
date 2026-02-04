@@ -87,7 +87,7 @@ export default function App() {
       <div className="app welcome">
         <img src={groupPhoto} alt="Trainee Firefighters" />
 
-        <h1>🔥 Welcome, Trainee Firefighter</h1>
+        <h1>🔥 Welcome Olu, Trainee Firefighter</h1>
         <h2>FREC Level 3 Revision Quiz</h2>
 
         <p>
