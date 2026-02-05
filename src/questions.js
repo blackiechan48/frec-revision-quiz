@@ -65,7 +65,7 @@ B. Chin lift
 C. Give oxygen
 D. Check BP
 
-12. A patient with asthma is speaking in short phrases. What does this indicate? B
+12. A patient with asthma suddenly started speaking in short phrases. What does this indicate? B
 A. Minor attack
 B. Severe breathing difficulty
 C. Anxiety only
@@ -185,7 +185,7 @@ B. Mild concussion only
 C. Worsening neurological status
 D. They’re anxious
 
-32. When checking breathing, what’s the MAX time you should take? C
+32. When checking breathing, how long should you take? C
 A. 2 seconds
 B. 20 seconds
 C. 10 seconds
@@ -230,7 +230,7 @@ D. To justify transport
 39. What’s the FIRST indicator that circulation is failing? C
 A. High BP
 B. Warm skin
-C. Tachycardia
+C. High heart rate
 D. Fast capillary refill
 
 40. A casualty is pale, sweaty, and says they feel “doom.” What does this commonly indicate? C
@@ -248,7 +248,7 @@ D. Look at their pupils
 42. A patient with chest pain becomes suddenly breathless. What’s your FIRST suspicion? C
 A. Hypoglycaemia
 B. Heat exhaustion
-C. Cardiac event
+C. Cardiac arrest
 D. Ear infection
 
 43. What’s the main risk of leaving a patient flat who is struggling to breathe? C
@@ -257,7 +257,7 @@ B. Heart rate increases
 C. Airway collapse
 D. They become anxious
 
-44. A confused casualty repeatedly tries to stand after trauma. What should you do first? C
+44. A confused casualty repeatedly tries to stand after trauma. What should you do FIRST? C
 A. Let them walk
 B. Ignore it
 C. Protect their spine and keep them still
@@ -299,7 +299,7 @@ B. To fill time
 C. To confirm improvement
 D. To check temperature
 
-51. What’s the safest way to approach a responsive casualty? C
+51. What’s the best way to approach a responsive casualty? C
 A. Grab their arm
 B. Shout instructions
 C. Introduce yourself and gain consent
@@ -359,11 +359,11 @@ B. Flu
 C. Sucking chest wound
 D. Asthma
 
-61. Why do you avoid using both NPAs and OPAs together? C
-A. Too expensive
-B. No space in kit
-C. It’s unnecessary and risky
-D. It increases oxygen
+61. Why would  you take an OPA out? C
+A. To be able to reuse it
+B. When casualty asks you to
+C. Casualty regains consciousness
+D. To increase oxygen Flow
 
 62. A casualty rapidly becomes drowsy after head trauma. What’s your concern? C
 A. Fatigue
@@ -386,7 +386,7 @@ D. They’re asleep
 65. A patient’s skin turns mottled. What does this indicate? C
 A. Hydration
 B. Panic
-C. Poor perfusion
+C. Poor Circulation
 D. Allergies
 
 66. When assessing pupils, what does unequal size suggest? C
@@ -455,11 +455,11 @@ B. For curiosity
 C. Possible tension pneumothorax
 D. Check hydration
 
-77. A casualty has pinpoint pupils. Possible cause? C
-A. Heatstroke
-B. Asthma
-C. Opioid use
-D. Fever
+// 77. A casualty has pinpoint pupils. Possible cause? C
+// A. Heatstroke
+// B. Asthma
+// C. Opioid use
+// D. Fever
 
 78. Why maintain manual stabilisation before collar application? C
 A. Looks professional
@@ -526,4 +526,10 @@ A. Cool their hands
 B. Offer food
 C. Prepare for airway compromise
 D. Remove eyebrows
+
+89. When are rescue breaths indicated for an adult? A
+A After drowning rescu
+B Only if no pulse is felt
+C When they are breathing less than 10 times per minute
+D When they are panicking
 `;
