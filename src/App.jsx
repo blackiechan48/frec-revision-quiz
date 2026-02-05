@@ -3,10 +3,17 @@ import { parseQuestions } from "./utils/parser";
 import { RAW_QUESTIONS } from "./questions";
 import groupPhoto from "./assets/group-photo.jpeg";
 
-const TIME_LIMIT = 60;
+const TIME_LIMIT = 30;
+const QUESTIONS_PER_QUIZ = 25;
 const BEST_SCORE_KEY = "frec3-best-score";
+const REMAINING_KEY = "frec3-remaining-indices";
+
+function shuffle(array) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
 
 export default function App() {
+  const [allQuestions, setAllQuestions] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -15,11 +22,10 @@ export default function App() {
   const [showWelcome, setShowWelcome] = useState(true);
   const [bestScore, setBestScore] = useState(null);
 
-  // Load questions + best score once
+  // Load question bank + best score once
   useEffect(() => {
     const parsed = parseQuestions(RAW_QUESTIONS);
-    const shuffled = [...parsed].sort(() => Math.random() - 0.5);
-    setQuestions(shuffled);
+    setAllQuestions(parsed);
 
     const savedBest = localStorage.getItem(BEST_SCORE_KEY);
     if (savedBest !== null) {
@@ -43,9 +49,34 @@ export default function App() {
     return () => clearInterval(timer);
   }, [timeLeft, showWelcome, finished, questions.length]);
 
+  // Get next batch with no repeats
+  const getNextQuestions = () => {
+    let remaining = JSON.parse(localStorage.getItem(REMAINING_KEY));
+
+    if (!remaining || remaining.length < QUESTIONS_PER_QUIZ) {
+      remaining = shuffle(
+        Array.from({ length: allQuestions.length }, (_, i) => i)
+      );
+    }
+
+    const selectedIndices = remaining.slice(0, QUESTIONS_PER_QUIZ);
+    const updatedRemaining = remaining.slice(QUESTIONS_PER_QUIZ);
+
+    localStorage.setItem(REMAINING_KEY, JSON.stringify(updatedRemaining));
+
+    return selectedIndices.map((i) => allQuestions[i]);
+  };
+
+  // Start or retake quiz
   const startQuiz = () => {
-    setShowWelcome(false);
+    const selectedQuestions = getNextQuestions();
+
+    setQuestions(selectedQuestions);
+    setCurrentIndex(0);
+    setAnswers({});
+    setFinished(false);
     setTimeLeft(TIME_LIMIT);
+    setShowWelcome(false);
   };
 
   const selectAnswer = (optionIndex) => {
@@ -67,7 +98,7 @@ export default function App() {
     0
   );
 
-  // Save best score when quiz finishes
+  // Save best score
   useEffect(() => {
     if (!finished) return;
 
@@ -77,7 +108,7 @@ export default function App() {
     }
   }, [finished, score, bestScore]);
 
-  if (questions.length === 0) {
+  if (allQuestions.length === 0) {
     return <div className="app">Loading quiz…</div>;
   }
 
@@ -91,13 +122,14 @@ export default function App() {
         <h2>FREC Level 3 Revision Quiz</h2>
 
         <p>
-          {questions.length} questions<br />
-          30 seconds per question
+          Total questions: <strong>{allQuestions.length}</strong><br />
+          Per quiz: <strong>{QUESTIONS_PER_QUIZ}</strong><br />
+          
         </p>
 
         {bestScore !== null && (
           <p>
-            🏆 Best score: <strong>{bestScore} / {questions.length}</strong>
+            🏆 Best score: <strong>{bestScore} / {QUESTIONS_PER_QUIZ}</strong>
           </p>
         )}
 
@@ -111,12 +143,12 @@ export default function App() {
     return (
       <div className="app">
         <h2>
-          Final Score: {score} / {questions.length}
+          Final Score: {score} / {QUESTIONS_PER_QUIZ}
         </h2>
 
         {bestScore !== null && (
           <p>
-            🏆 Best Score: <strong>{bestScore} / {questions.length}</strong>
+            🏆 Best Score: <strong>{bestScore} / {QUESTIONS_PER_QUIZ}</strong>
           </p>
         )}
 
@@ -138,9 +170,7 @@ export default function App() {
           </div>
         ))}
 
-        <button onClick={() => window.location.reload()}>
-          Restart Quiz
-        </button>
+        <button onClick={startQuiz}>Retake Quiz</button>
       </div>
     );
   }
@@ -151,7 +181,7 @@ export default function App() {
   return (
     <div className="app">
       <h2>
-        Question {currentIndex + 1} of {questions.length}
+        Question {currentIndex + 1} of {QUESTIONS_PER_QUIZ}
       </h2>
 
       <div className="timer">⏱ {timeLeft}s</div>
