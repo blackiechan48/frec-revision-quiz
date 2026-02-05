@@ -3,7 +3,7 @@ import { parseQuestions } from "./utils/parser";
 import { RAW_QUESTIONS } from "./questions";
 import groupPhoto from "./assets/group-photo.jpeg";
 
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 90;
 const QUESTIONS_PER_QUIZ = 25;
 const BEST_SCORE_KEY = "frec3-best-score";
 const REMAINING_KEY = "frec3-remaining-indices";
@@ -133,7 +133,7 @@ export default function App() {
           </p>
         )}
 
-        <button onClick={startQuiz}>Start Quiz</button>
+        <button onClick={startQuiz}>Start Quiz </button>
       </div>
     );
   }
